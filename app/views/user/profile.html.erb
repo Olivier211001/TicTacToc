@@ -1,0 +1,31 @@
+<div class="pageuserstyle">
+    <h1>My Profile</h1>
+    </br>
+    <h2> <%= current_user.email %> </h2>
+    </br>
+    </br>
+    <a href="/myprofile/:id/edit">Edit profile</a>
+    </br>
+    </br>
+    <h3> my games : </h3>
+    </br>
+    <% @games.each do |i| %>
+        <div>
+            <p> 
+                <h3><b> Game : <%= i.id   %> </b></h3>
+                Creator: <%= i.creator.email %> 
+                </br>
+                Opponent : <%= i.opponent.email %>
+                </br>  
+                <% if i.winner%>
+                    Winner : <%= i.winner.email %> 
+                <% end %>
+                <% if i.player_turn %>
+                    Player_turn : <%= i.player_turn.email %> 
+                <% end %>
+                </br>
+            </p>
+        </div>
+        </br>
+    <% end %>
+</div>

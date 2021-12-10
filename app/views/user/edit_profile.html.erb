@@ -1,0 +1,5 @@
+<%= form_with model: current_user, url: "/myprofile/current_user.id", method: :patch do |form| %>
+  <%= form.label :recipeTitle, "Password :" %>
+  <%= form.text_field :password %>
+  <%= form.submit "Modifier le user" %>
+<% end %>
